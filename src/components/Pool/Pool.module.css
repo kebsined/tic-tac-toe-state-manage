@@ -1,0 +1,9 @@
+.pool {
+	display: grid;
+	grid-template-columns: repeat(3, 7rem);
+	grid-template-rows: repeat(3, 7rem);
+	align-items: center;
+	gap: 3px;
+	width: 22rem;
+	height: 22rem;
+}

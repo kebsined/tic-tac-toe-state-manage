@@ -1,0 +1,21 @@
+.button {
+	width: 7rem;
+	height: 7rem;
+	border: none;
+	font-size: 50px;
+	color: #fff;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	text-shadow: #fc0 1px 0 10px;
+	background-color: transparent;
+	border-radius: 15%;
+	box-shadow: 2px 2px 2px #fff;
+}
+
+.button:hover {
+	background-color: #7d6ef0d2;
+}
+
+.button:active {
+	transform: scale3d(1.1, 1.1, 1.1);
+}

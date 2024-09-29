@@ -1,0 +1,11 @@
+.info {
+	width: 22rem;
+	text-align: center;
+	color: #fff;
+	font-size: 50px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	font-style: italic;
+	text-shadow: #fc0 1px 0 10px;
+	transform: scale(0.9);
+	line-height: 30px;
+}
