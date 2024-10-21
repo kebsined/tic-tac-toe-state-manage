@@ -1,16 +1,26 @@
 import styles from './Info.module.css';
 import PropTypes from 'prop-types';
+import { store } from '../../store';
+import { useEffect, useState } from 'react';
 
-export const InfoLayout = ({ currentPlayer, isGameEnded, isDraw }) => {
+export const InfoLayout = () => {
+	const { currentPlayer, isGameEnded, isDraw } = store.getState();
+	const [state, setState] = useState(store.getState());
+
+	useEffect(() => {
+		const unsubscribe = store.subscribe(() => {
+			setState(store.getState());
+		});
+		return () => {
+			unsubscribe();
+		};
+	}, []);
+
 	return (
 		<h1 className={styles.info}>
-			{` ${
-				isDraw
-					? 'Ничья!!!'
-					: isGameEnded
-					? 'Выиграл ' + currentPlayer + ' !!!'
-					: 'Ходит ' + currentPlayer
-			}`}
+			{!isGameEnded && !isDraw && 'Ходит ' + currentPlayer}
+			{isGameEnded && 'Выиграл ' + currentPlayer + '!!!'}
+			{isDraw && 'Ничья!!!'}
 		</h1>
 	);
 };
